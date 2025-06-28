@@ -8,6 +8,18 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+// Course pages
+import RedHatCertifiedCourses from './courses/RedHatCertifiedCourses';
+import NetworkAndSecurity from './courses/NetworkAndSecurity';
+import OracleDatabaseCertification from './courses/OracleDatabaseCertification';
+import CertifiedEthicalHacker from './courses/CertifiedEthicalHacker';
+import MicrosoftServerCertification from './courses/MicrosoftServerCertification';
+import OracleJavaCertification from './courses/OracleJavaCertification';
+import MobileAppDevelopment from './courses/MobileAppDevelopment';
+import FrontEndBackEndWebDevelopment from './courses/FrontEndBackEndWebDevelopment';
+import DigitalMarketing from './courses/DigitalMarketing';
+import ProgrammingAndFrameworks from './courses/ProgrammingAndFrameworks';
+import GraphicDesigning from './courses/GraphicDesigning';
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -52,6 +64,18 @@ function App() {
                 <Contact />
               </PageWrapper>
             } />
+            {/* Course routes */}
+            <Route path="/courses/red-hat-certified-courses" element={<PageWrapper><RedHatCertifiedCourses /></PageWrapper>} />
+            <Route path="/courses/network-and-security" element={<PageWrapper><NetworkAndSecurity /></PageWrapper>} />
+            <Route path="/courses/oracle-database-certification" element={<PageWrapper><OracleDatabaseCertification /></PageWrapper>} />
+            <Route path="/courses/certified-ethical-hacker" element={<PageWrapper><CertifiedEthicalHacker /></PageWrapper>} />
+            <Route path="/courses/microsoft-server-certification" element={<PageWrapper><MicrosoftServerCertification /></PageWrapper>} />
+            <Route path="/courses/oracle-java-certification" element={<PageWrapper><OracleJavaCertification /></PageWrapper>} />
+            <Route path="/courses/mobile-app-development" element={<PageWrapper><MobileAppDevelopment /></PageWrapper>} />
+            <Route path="/courses/front-end-back-end-web-development" element={<PageWrapper><FrontEndBackEndWebDevelopment /></PageWrapper>} />
+            <Route path="/courses/digital-marketing" element={<PageWrapper><DigitalMarketing /></PageWrapper>} />
+            <Route path="/courses/programming-and-frameworks" element={<PageWrapper><ProgrammingAndFrameworks /></PageWrapper>} />
+            <Route path="/courses/graphic-designing" element={<PageWrapper><GraphicDesigning /></PageWrapper>} />
           </Routes>
         </AnimatePresence>
         <Footer />

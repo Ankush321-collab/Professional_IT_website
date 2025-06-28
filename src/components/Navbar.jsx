@@ -35,10 +35,27 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'Courses', path: '/courses', dropdown: true },
     { name: 'Services', path: '/services' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  const coursesDropdown = [
+    'Red Hat Certified Courses',
+    'Network and Security',
+    'Oracle Database Certification',
+    'Certified Ethical Hacker (CEH)',
+    'Microsoft Server Certification',
+    'Oracle JAVA Certification',
+    'Mobile App Development',
+    'Front End & Back End Web Development',
+    'Digital Marketing',
+    'Programming And Frameworks',
+    'Graphic Designing',
+  ];
+
+  const [showCoursesDropdown, setShowCoursesDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,27 +115,87 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-2 lg:gap-6 xl:gap-10">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-teal-400 ${
-                  location.pathname === item.path
-                    ? 'text-primary-600 dark:text-primary-400'
-                    : 'text-gray-700 dark:text-gray-300'
-                }`}
-              >
-                {item.name}
-                {location.pathname === item.path && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400"
-                    layoutId="navbar-indicator"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-              </Link>
+              item.dropdown ? (
+                <div key={item.name} className="relative">
+                  <button
+                    onMouseEnter={() => setShowCoursesDropdown(true)}
+                    onMouseLeave={() => setShowCoursesDropdown(false)}
+                    onClick={() => setShowCoursesDropdown((v) => !v)}
+                    className={`flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-teal-400 ${
+                      location.pathname === item.path
+                        ? 'text-primary-600 dark:text-primary-400'
+                        : 'text-gray-700 dark:text-gray-300'
+                    }`}
+                    style={{ minWidth: 120 }}
+                  >
+                    <span className="mr-1">{item.name}</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  <AnimatePresence>
+                    {showCoursesDropdown && (
+                      <motion.div
+                        onMouseEnter={() => setShowCoursesDropdown(true)}
+                        onMouseLeave={() => setShowCoursesDropdown(false)}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.18 }}
+                        className="absolute left-0 mt-2 w-72 bg-gray-50 border border-gray-200 shadow-xl rounded-b-lg z-50"
+                      >
+                        <ul className="py-2">
+                          {coursesDropdown.map((course, idx) => (
+                            <li key={course}>
+                              <Link
+                                to={
+                                  idx === 0 ? '/courses/red-hat-certified-courses'
+                                  : idx === 1 ? '/courses/network-and-security'
+                                  : idx === 2 ? '/courses/oracle-database-certification'
+                                  : idx === 3 ? '/courses/certified-ethical-hacker'
+                                  : idx === 4 ? '/courses/microsoft-server-certification'
+                                  : idx === 5 ? '/courses/oracle-java-certification'
+                                  : idx === 6 ? '/courses/mobile-app-development'
+                                  : idx === 7 ? '/courses/front-end-back-end-web-development'
+                                  : idx === 8 ? '/courses/digital-marketing'
+                                  : idx === 9 ? '/courses/programming-and-frameworks'
+                                  : idx === 10 ? '/courses/graphic-designing'
+                                  : '#'
+                                }
+                                className={`block px-4 py-2 text-[15px] ${idx === 0 ? 'font-semibold text-gray-700' : 'text-red-700'} hover:bg-blue-50 hover:text-blue-700 transition-colors`}
+                                onClick={() => setShowCoursesDropdown(false)}
+                              >
+                                {course}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-teal-400 ${
+                    location.pathname === item.path
+                      ? 'text-primary-600 dark:text-primary-400'
+                      : 'text-gray-700 dark:text-gray-300'
+                  }`}
+                  onClick={() => setShowCoursesDropdown(false)}
+                >
+                  {item.name}
+                  {location.pathname === item.path && (
+                    <motion.div
+                      className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400"
+                      layoutId="navbar-indicator"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              )
             ))}
             <ThemeToggle />
           </div>
@@ -162,21 +239,53 @@ const Navbar = () => {
             >
               <div className="flex flex-col items-start space-y-4 px-6 py-2">
                 {navItems.map((item) => (
-                  <motion.div
-                    key={item.name}
-                    variants={mobileLinkVariants}
-                    whileHover="hover"
-                    whileTap="tap"
-                    className="w-full text-left"
-                  >
-                    <Link
-                      to={item.path}
-                      className="block hover:text-teal-400 transition-colors py-2 text-lg font-semibold"
-                      onClick={() => setIsOpen(false)}
+                  item.dropdown ? (
+                    <div key={item.name} className="w-full">
+                      <span className="block py-2 text-lg font-semibold text-gray-700 dark:text-gray-200">Courses</span>
+                      <ul className="pl-2">
+                        {coursesDropdown.map((course, idx) => (
+                          <li key={course}>
+                            <Link
+                              to={
+                                idx === 0 ? '/courses/red-hat-certified-courses'
+                                : idx === 1 ? '/courses/network-and-security'
+                                : idx === 2 ? '/courses/oracle-database-certification'
+                                : idx === 3 ? '/courses/certified-ethical-hacker'
+                                : idx === 4 ? '/courses/microsoft-server-certification'
+                                : idx === 5 ? '/courses/oracle-java-certification'
+                                : idx === 6 ? '/courses/mobile-app-development'
+                                : idx === 7 ? '/courses/front-end-back-end-web-development'
+                                : idx === 8 ? '/courses/digital-marketing'
+                                : idx === 9 ? '/courses/programming-and-frameworks'
+                                : idx === 10 ? '/courses/graphic-designing'
+                                : '#'
+                              }
+                              className={`block px-4 py-2 text-[15px] ${idx === 0 ? 'font-semibold text-gray-700 dark:text-gray-100' : 'text-red-700 dark:text-red-400'} hover:bg-blue-50 hover:text-blue-700 transition-colors`}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {course}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <motion.div
+                      key={item.name}
+                      variants={mobileLinkVariants}
+                      whileHover="hover"
+                      whileTap="tap"
+                      className="w-full text-left"
                     >
-                      {item.name}
-                    </Link>
-                  </motion.div>
+                      <Link
+                        to={item.path}
+                        className="block hover:text-teal-400 transition-colors py-2 text-lg font-semibold"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
+                  )
                 ))}
                 <div className="w-full flex justify-center pt-2">
                   <ThemeToggle />
