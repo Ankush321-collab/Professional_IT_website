@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -162,7 +161,13 @@ const Navbar = () => {
                                   : idx === 10 ? '/courses/graphic-designing'
                                   : '#'
                                 }
-                                className={`block px-4 py-2 text-[15px] ${idx === 0 ? 'font-semibold text-gray-700' : 'text-red-700'} hover:bg-blue-50 hover:text-blue-700 transition-colors`}
+                                className={`block px-4 py-2 text-[15px] font-medium rounded-lg transition-all duration-200
+                                  ${
+                                    idx === 0
+                                      ? 'font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900 dark:hover:to-purple-900 hover:text-blue-700 dark:hover:text-blue-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:border-l-4 hover:border-blue-500 dark:hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400'
+                                      : 'text-red-700 dark:text-red-400 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900 dark:hover:to-purple-900 hover:text-blue-700 dark:hover:text-blue-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:border-l-4 hover:border-blue-500 dark:hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400'
+                                  }
+                                `}
                                 onClick={() => setShowCoursesDropdown(false)}
                               >
                                 {course}
@@ -202,8 +207,15 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
-              {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="p-2 rounded-lg bg-black/80 hover:bg-black text-white focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200 shadow-lg"
+            >
+              {isOpen ? (
+                <FiX className="h-6 w-6 text-white" />
+              ) : (
+                <FiMenu className="h-6 w-6 text-white" />
+              )}
             </button>
           </div>
         </div>
@@ -260,7 +272,13 @@ const Navbar = () => {
                                 : idx === 10 ? '/courses/graphic-designing'
                                 : '#'
                               }
-                              className={`block px-4 py-2 text-[15px] ${idx === 0 ? 'font-semibold text-gray-700 dark:text-gray-100' : 'text-red-700 dark:text-red-400'} hover:bg-blue-50 hover:text-blue-700 transition-colors`}
+                              className={`block px-4 py-2 text-[15px] font-medium rounded-lg transition-all duration-200
+                                ${
+                                  idx === 0
+                                    ? 'font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900 dark:hover:to-purple-900 hover:text-blue-700 dark:hover:text-blue-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:border-l-4 hover:border-blue-500 dark:hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400'
+                                    : 'text-red-700 dark:text-red-400 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900 dark:hover:to-purple-900 hover:text-blue-700 dark:hover:text-blue-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:border-l-4 hover:border-blue-500 dark:hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400'
+                                }
+                              `}
                               onClick={() => setIsOpen(false)}
                             >
                               {course}

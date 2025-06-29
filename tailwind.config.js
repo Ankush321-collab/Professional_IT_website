@@ -53,6 +53,10 @@ export default {
         'fadeInUp': 'fadeInUp 0.6s ease-out',
         'slideInLeft': 'slideInLeft 0.6s ease-out',
         'slideInRight': 'slideInRight 0.6s ease-out',
+        'blob': 'blob 7s infinite',
+        'blob2': 'blob 7s infinite 2s',
+        'blob3': 'blob 7s infinite 4s',
+        'pulse-slow': 'pulse 5s infinite',
       },
       keyframes: {
         float: {
@@ -71,11 +75,38 @@ export default {
           '0%': { opacity: '0', transform: 'translateX(30px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
+        blob: {
+          '0%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+          '33%': {
+            transform: 'translate(30px, -50px) scale(1.1)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px) scale(0.9)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+        },
       },
       backdropBlur: {
         'xs': '2px',
-      }
+      },
+      boxShadow: {
+        'glow-blue': '0 0 15px rgba(59, 130, 246, 0.5)',
+        'glow-purple': '0 0 15px rgba(139, 92, 246, 0.5)',
+        'glow-accent': '0 0 15px rgba(20, 184, 166, 0.5)',
+      },
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+        'transform': 'transform',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
 }

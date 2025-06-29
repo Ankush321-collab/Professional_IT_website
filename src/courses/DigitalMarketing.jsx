@@ -1,6 +1,7 @@
 import React from 'react';
 import digitalImg from '../assets/digital.jpg';
 import { FaChartLine, FaSearch, FaHashtag, FaEnvelope, FaAd, FaLaptop, FaBriefcase, FaUserTie, FaCertificate } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const DigitalMarketing = () => {
   return (
@@ -14,7 +15,7 @@ const DigitalMarketing = () => {
               <p className="text-lg sm:text-xl mb-6">Master the digital landscape with our comprehensive training covering SEO, social media, PPC, content marketing, and analytics.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-white dark:bg-yellow-400 hover:bg-blue-50 dark:hover:bg-yellow-500 text-blue-600 dark:text-gray-900 font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition duration-300">
-                  Enroll Now
+                  <Link to="/contact#contact-form">Enroll Now</Link>
                 </button>
                 <button className="bg-transparent hover:bg-blue-700 dark:hover:bg-gray-800 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg border border-white transition duration-300">
                   Download Syllabus
@@ -239,7 +240,7 @@ const DigitalMarketing = () => {
           <h2 className="text-xl sm:text-2xl font-bold mb-4">Start Your Digital Marketing Career Today</h2>
           <p className="mb-6 max-w-2xl mx-auto">Limited seats available for our next cohort. Apply now to secure your spot.</p>
           <button className="py-2 sm:py-3 px-6 sm:px-8 rounded-lg font-bold transition duration-300 bg-white dark:bg-yellow-400 hover:bg-blue-50 dark:hover:bg-yellow-500 text-blue-600 dark:text-gray-900">
-            Apply Now
+            <Link to="/contact#contact-form">Apply Now</Link>
           </button>
         </div>
       </div>
