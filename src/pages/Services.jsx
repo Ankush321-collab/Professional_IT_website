@@ -180,7 +180,7 @@ const Services = () => {
             {/* The rest of the services as simple cards */}
             {services.slice(5).map((service, index) => (
               <div className="max-w-xs w-full mx-auto">
-                <ServiceCard key={service.id} service={{...service, image: `/src/assets/${service.image}`}} index={index + 5} />
+                <ServiceCard key={service.id} service={service} index={index + 5} />
               </div>
             ))}
           </div>

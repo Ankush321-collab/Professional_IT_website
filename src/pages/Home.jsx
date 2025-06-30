@@ -18,7 +18,7 @@ const getSlides = (services) => {
 const testimonials = [
   {
     name: 'Abhinav Gyawali',
-    image: '/src/assets/HemantUncle.png',
+    image: '/assets/HemantUncle.png',
     testimonial: 'One of the best place to learn tech. Great support and amazing teachers! I\'d recommend it to others, 10/10.',
     stars: 5,
     role: '',
@@ -26,7 +26,7 @@ const testimonials = [
   },
   {
     name: 'Pravesh Shrestha',
-    image: '/src/assets/HemantUncle.png',
+    image: '/assets/HemantUncle.png',
     testimonial: 'CPN has always been a place of great learning and place to find proper guidance. They have experienced instructor who can provide guidance and suggestion about career and courses which is really helpful for beginners who want to know about career options in IT. CPN is highly recommended in my book as a place to learning and developing skills needed by both beginners and professionals alike.',
     stars: 5,
     role: 'Red Hat Student',
@@ -34,7 +34,7 @@ const testimonials = [
   },
   {
     name: 'Avishek Pradhan',
-    image: '/src/assets/HemantUncle.png',
+    image: '/assets/HemantUncle.png',
     testimonial: 'I completed my RHCSA and RHCE from Computer Point Nepal. The learning environment here is suited for both working professionals as well as students. From my experience tutors and staff members are very helpful. With their proper guidance I was able to complete RHCSA certification.',
     stars: 5,
     role: '',
@@ -122,7 +122,7 @@ const Home = () => {
           <div className="relative">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 transition-all duration-700">
               {slides[current].map((service, index) => (
-                <ServiceCard key={service.id} service={{...service, image: `/src/assets/${service.image}`}} index={index} />
+                <ServiceCard key={service.id} service={service} index={index} />
               ))}
             </div>
             {/* Optionally, add dots or arrows here for manual navigation */}

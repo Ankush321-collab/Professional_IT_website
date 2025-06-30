@@ -1,5 +1,4 @@
 import React from 'react';
-import microimg from '../assets/microsoft.jpg';
 import { Link } from 'react-router-dom';
 
 // Enhanced SVG Icon Components with consistent sizing
@@ -49,7 +48,7 @@ const MicrosoftServerCertification = () => (
       <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
       <div className="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
         <img 
-          src={microimg} 
+          src={'/assets/microsoft.jpg'} 
           alt="Microsoft Server" 
           className="w-full h-56 object-cover transform transition duration-500 group-hover:scale-105" 
         />

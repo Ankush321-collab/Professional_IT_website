@@ -1,5 +1,4 @@
 import React from 'react';
-import redhatImg from '../assets/redhat.jpg';
 import { Link } from 'react-router-dom';
 
 const RedHatCertifiedCourses = () => {
@@ -100,7 +99,7 @@ const RedHatCertifiedCourses = () => {
             </button>
           </div>
         </div>
-        <div className="absolute inset-0 bg-[url('../assets/redhat.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/assets/redhat.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         <div className="absolute -bottom-1 left-0 right-0 h-16 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
       </div>
 
@@ -110,7 +109,7 @@ const RedHatCertifiedCourses = () => {
         <div className="relative group overflow-hidden rounded-2xl shadow-2xl hover:shadow-2xl transition-all duration-500 h-full">
           <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-800/10 dark:from-red-700/20 dark:to-red-900/20 z-10"></div>
           <img 
-            src={redhatImg} 
+            src={'/assets/redhat.jpg'} 
             alt="Red Hat Certified professional working on Linux server" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
             loading="lazy"

@@ -1,5 +1,4 @@
 import React from 'react';
-import oracleImg from '../assets/oracle.jpg';
 import { Link } from 'react-router-dom';
 
 // Custom SVG Icon Components with improved styling
@@ -48,7 +47,7 @@ const OracleDatabaseCertification = () => (
       <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
       <div className="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
         <img 
-          src={oracleImg} 
+          src={'/assets/oracle.jpg'} 
           alt="Oracle Database" 
           className="w-full h-48 object-cover transform transition duration-500 group-hover:scale-105" 
         />

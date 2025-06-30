@@ -1,5 +1,4 @@
 import React from 'react';
-import mobileImg from '../assets/mobile.jpg';
 import { Link } from 'react-router-dom';
 
 // Custom SVG Icon Components with enhanced styling
@@ -37,10 +36,10 @@ const DesignIcon = ({ className = '' }) => (
 );
 
 const MobileAppDevelopment = () => (
-  <div className="max-w-6xl mx-auto px-6 py-10 dark:bg-gray-900 dark:text-gray-100">
+  <div className="max-w-6xl mx-auto px-6 py-10 dark:bg-gray-900 dark:text-gray-100 ">
     {/* Hero Section with 3D effect */}
     <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
-      <div className="md:w-1/2 space-y-6">
+      <div className="md:w-1/2 space-y-6 mt-10">
         <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full shadow-lg">
           <MobileIcon className="text-white mr-2" />
           <span className="text-white font-medium">Mobile Development</span>
@@ -68,7 +67,7 @@ const MobileAppDevelopment = () => (
         <div className="relative group">
           <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-500 animate-tilt"></div>
           <img 
-            src={mobileImg} 
+            src={'/assets/mobile.jpg'} 
             alt="Mobile App Development" 
             className="relative w-full h-auto rounded-xl shadow-2xl transform transition duration-500 group-hover:scale-105" 
           />
@@ -77,8 +76,8 @@ const MobileAppDevelopment = () => (
     </div>
 
     {/* Features Section */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8  mt-16">
-      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-transparent hover:border-purple-500 group ">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8  ">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-transparent hover:border-purple-500 group  ">
         <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-600 transition-colors duration-300">
           <AndroidIcon className="text-purple-600 group-hover:text-white transition-colors duration-300" />
           <AppleIcon className="text-gray-800 dark:text-gray-200 group-hover:text-white transition-colors duration-300" />

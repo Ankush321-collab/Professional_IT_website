@@ -1,5 +1,4 @@
 import React from 'react';
-import progImg from '../assets/programming.jpg';
 import { Link } from 'react-router-dom';
 
 // SVG Icon Components with hover effects
@@ -42,7 +41,7 @@ const ProgrammingAndFrameworks = () => (
     {/* 3D Image Section with hover effect */}
     <div className="mb-8 rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       <img 
-        src={progImg} 
+        src={'/assets/programming.jpg'} 
         alt="Programming and frameworks concepts" 
         className="w-full h-64 md:h-80 object-cover transform transition-transform duration-500 hover:scale-105"
       />

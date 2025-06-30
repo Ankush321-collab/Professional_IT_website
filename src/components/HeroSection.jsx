@@ -9,7 +9,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRightIcon, PlayIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
-import cpn from '../../src/assets/cpn.png'
 
 import React, { useState, useEffect } from 'react';
 
@@ -47,7 +46,7 @@ const HeroSection = () => {
               transition={{ delay: 0.4, duration: 0.7, type: 'spring', stiffness: 120 }}
               className="mb-6"
             >
-              <img src={cpn} alt="Logo" className="mx-auto w-24 h-24 rounded-full shadow-lg border-4 border-yellow-400 bg-white/80" />
+              <img src={'/assets/cpn.png'} alt="Logo" className="mx-auto w-24 h-24 rounded-full shadow-lg border-4 border-yellow-400 bg-white/80" />
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -159,7 +158,7 @@ const HeroSection = () => {
             <div
               className="relative z-10 rounded-full shadow-3xl w-[320px] h-[180px] sm:w-[400px] sm:h-[240px] md:w-[480px] md:h-[320px] lg:w-[600px] lg:h-[420px] max-w-full animate-float-img transition-all duration-700 hover:scale-110 hover:shadow-[0_8px_32px_rgba(0,0,0,0.45)] border-4 border-primary-200 dark:border-primary-700 bg-center bg-cover hover:border-4 hover:border-yellow-400 hover:shadow-yellow-300/60 hover:outline hover:outline-4 hover:outline-yellow-200 mx-auto lg:ml-[120px]"
               style={{
-                backgroundImage: `url(${typeof cpn === 'string' ? cpn : cpn.default || ''})`,
+                backgroundImage: `url('/assets/cpn.png')`,
                 animationDuration: '3.5s',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',

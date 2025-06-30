@@ -307,7 +307,7 @@ const About = () => {
               {/* CEO Card */}
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-6 sm:p-8 w-full max-w-xs sm:max-w-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mb-6 lg:mb-0">
                 <img
-                  src="/src/assets/HemantUncle.png"
+                  src="/assets/HemantUncle.png"
                   alt="Anand Chaurasiya"
                   className="w-32 h-32 object-cover rounded-full shadow-lg mx-auto mb-4 border-4 border-white dark:border-gray-800"
                 />
@@ -325,7 +325,7 @@ const About = () => {
               {/* MD Card */}
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-6 sm:p-8 w-full max-w-xs sm:max-w-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <img
-                  src="/src/assets/HemantUncle.png"
+                  src="/assets/HemantUncle.png"
                   alt="Hemant Chaurasiya"
                   className="w-32 h-32 object-cover rounded-full shadow-lg mx-auto mb-4 border-4 border-white dark:border-gray-800"
                 />

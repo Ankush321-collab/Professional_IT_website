@@ -1,5 +1,4 @@
 import React from 'react';
-import networkImg from '../assets/network.jpg';
 import { Link } from 'react-router-dom';
 
 // Enhanced Custom SVG Icon Components with hover effects
@@ -64,7 +63,7 @@ const NetworkAndSecurity = () => (
         <div className="md:w-1/3">
           <div className="relative group">
             <img 
-              src={networkImg} 
+              src={'/assets/network.jpg'} 
               alt="Network and Security" 
               className="w-full rounded-xl shadow-2xl border-4 border-white/20 transform transition-all duration-500 group-hover:rotate-1 group-hover:scale-105"
             />

@@ -1,5 +1,4 @@
 import React from 'react';
-import graphicImg from '../assets/graphic.jpg';
 import { Link } from 'react-router-dom';
 
 const GraphicDesigning = () => {
@@ -158,7 +157,7 @@ const GraphicDesigning = () => {
             </button>
           </div>
         </div>
-        <div className="absolute inset-0 bg-[url('../assets/graphic.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/assets/graphic.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         <div className="absolute -bottom-1 left-0 right-0 h-16 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
       </div>
 
@@ -168,7 +167,7 @@ const GraphicDesigning = () => {
         <div className="relative group overflow-hidden rounded-2xl shadow-2xl hover:shadow-2xl transition-all duration-500 h-full">
           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-orange-500/10 dark:from-pink-700/20 dark:to-orange-700/20 z-10"></div>
           <img 
-            src={graphicImg} 
+            src={'/assets/graphic.jpg'} 
             alt="Graphic Designing" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
             loading="lazy"

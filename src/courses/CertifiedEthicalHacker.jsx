@@ -1,5 +1,4 @@
 import React from 'react';
-import cehImg from '../assets/ceh.jpg';
 import { FaShieldAlt, FaUserSecret, FaLaptopCode, FaClock, FaCertificate, FaChalkboardTeacher, FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -98,7 +97,7 @@ const CertifiedEthicalHacker = () => (
             </div>
             <div className="md:w-1/3 relative group">
               <img 
-                src={cehImg} 
+                src={'/assets/ceh.jpg'} 
                 alt="Certified Ethical Hacker" 
                 className="w-full rounded-lg shadow-md transform transition-all duration-500 group-hover:scale-105"
               />

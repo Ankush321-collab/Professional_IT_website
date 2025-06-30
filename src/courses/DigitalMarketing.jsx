@@ -1,5 +1,4 @@
 import React from 'react';
-import digitalImg from '../assets/digital.jpg';
 import { FaChartLine, FaSearch, FaHashtag, FaEnvelope, FaAd, FaLaptop, FaBriefcase, FaUserTie, FaCertificate } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -75,7 +74,7 @@ const DigitalMarketing = () => {
               </p>
               
               <img 
-                src={digitalImg} 
+                src={'/assets/digital.jpg'} 
                 alt="Digital Marketing" 
                 className="w-full rounded-lg mb-4 sm:mb-6 shadow-md"
                 loading="lazy"
